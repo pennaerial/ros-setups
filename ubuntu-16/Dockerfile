@@ -12,5 +12,9 @@ RUN cd /tmp && chmod +x setup*.sh
 RUN ./tmp/setup-ros.sh
 RUN ./tmp/setup-mavlink-mavros.sh
 RUN ./tmp/setup-install.sh
+RUN rm -rf ~/catkin_ws
+RUN mkdir -p ~/catkin_ws
+
+COPY initialize-docker-env.sh /root/.
 
 ENTRYPOINT ["/bin/bash"]
