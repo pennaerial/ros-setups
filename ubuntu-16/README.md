@@ -38,3 +38,5 @@ You should also clone any repositories that you plan to
 contribute to into `/root/catkin_ws/src/<my_repo>`
 
 Instructions to forward X11 for Gazebo support will be added at a later date.
+See https://stackoverflow.com/a/25280523/3421536 for docker run command
+sudo docker run -ti -v /home/cybered/Development/par-dev:/root/catkin_ws -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH par
