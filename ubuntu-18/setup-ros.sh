@@ -4,6 +4,7 @@ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C
 sudo apt-get update
 sudo apt-get -y install ros-melodic-desktop
 sudo apt-get -y install ros-melodic-gazebo-pkgs
+sudo apt-get -y install ros-melodic-geographic-msgs
 sudo rosdep init
 rosdep update
 echo "source /opt/ros/melodic/setup.bash" >> ~/.profile

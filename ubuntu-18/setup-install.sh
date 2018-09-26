@@ -5,14 +5,11 @@
 export DEBIAN_FRONTEND=noninteractive
 sudo usermod -a -G dialout $USER
 
-sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
 sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get -q -y install cmake vim -y
-sudo apt-get -q -y install ant protobuf-compiler libeigen3-dev libopencv-dev
-sudo apt-get -q -y install python-argparse git-core wget zip python-empy qtcreator cmake build-essential genromfs -y
+sudo apt-get -q -y install cmake ant protobuf-compiler libeigen3-dev libopencv-dev python-argparse git-core wget zip python-empy qtcreator cmake build-essential genromfs
 sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
 wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade -y
 # sudo apt-get install libignition-common-dev
 sudo apt-get -y install gazebo7
 sudo apt-get -y install libgazebo7-dev
@@ -26,11 +23,10 @@ sudo apt-get -q -y install python-serial openocd flex bison libncurses5-dev auto
     libftdi-dev libtool zlib1g-dev \
     python-empy gcc-arm-embedded -y
 
-cd ~
-mkdir -p /pennair/src 
-cd /pennair/src 
-git clone https://github.com/darknight-007/Firmware
-cd Firmware
+mkdir -p ~/pennair/src 
+cd ~/pennair/src 
+git clone https://github.com/Open-UAV/Firmware
+cd ~/pennair/src/Firmware
 git submodule update --init --recursive
 echo "now type the following at the command prompt:"
 echo "cd ~/pennair/src/Firmware/ && make posix_sitl_default gazebo"
