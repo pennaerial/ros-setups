@@ -12,6 +12,12 @@ rosdep install --from-paths src --ignore-src --rosdistro melodic -y
 cd ~/pennair/catkin_ws/src/
 ln -s ~/pennair/src/Firmware/
 ln -s ~/pennair/src/Firmware/Tools/sitl_gazebo/
+
+# Apply sitl_gazebo patch for gazebo0 compatibility
+cp -r ./sitl_gazebo_patch_gazebo9/sitl_gazebo/src ~/pennair/src/Firmware/Tools/sitl_gazebo/
+cp -r ./sitl_gazebo_patch_gazebo9/sitl_gazebo/include ~/pennair/src/Firmware/Tools/sitl_gazebo/
+cp -r ./sitl_gazebo_patch_gazebo9/CMakeLists.txt ~/pennair/src/Firmware
+
 cd ..
 catkin build 
 echo "source ~/pennair/catkin_ws/devel/setup.bash" >> ~/.profile

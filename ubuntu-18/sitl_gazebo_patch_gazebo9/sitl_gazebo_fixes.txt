@@ -1,0 +1,12 @@
+1. Find and replace all #include "gazebo/math/Vector3.hh" with
+   include "ignition/math/Vector3.hh" in 
+   pennair/src/Firmware/Tools/sitl_gazebo/include/
+
+2. replace all math::Vector3 declarations with ignition::math::Vector3
+   declarations in 
+   	pennair/src/Firmware/Tools/sitl_gazebo/include/
+
+3-100. Fix a bajillion Gazebo9 compatibility errors with the Pixhawk code
+
+101. Add set(cxx_flags "${cxx_flags} -Wno-error") to the build flags section
+     of the Pixhawk CMake file: ~/pennair/src/Firmware/CMakeLists.txt
