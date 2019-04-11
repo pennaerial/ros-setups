@@ -13,7 +13,7 @@ cd ~/pennair/catkin_ws/src/
 ln -s ~/pennair/src/Firmware/
 ln -s ~/pennair/src/Firmware/Tools/sitl_gazebo/
 
-# Apply sitl_gazebo patch for gazebo0 compatibility
+# Apply PX4 sitl_gazebo patch for gazebo9 compatibility
 cp -r ./sitl_gazebo_patch_gazebo9/sitl_gazebo/src ~/pennair/src/Firmware/Tools/sitl_gazebo/
 cp -r ./sitl_gazebo_patch_gazebo9/sitl_gazebo/include ~/pennair/src/Firmware/Tools/sitl_gazebo/
 cp -r ./sitl_gazebo_patch_gazebo9/CMakeLists.txt ~/pennair/src/Firmware
