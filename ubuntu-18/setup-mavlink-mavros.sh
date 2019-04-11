@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir -p ~/pennair/catkin_ws/src
 cd ~/pennair/catkin_ws
-. /opt/ros/kinetic/setup.bash
+. /opt/ros/melodic/setup.bash
 sudo apt-get -y install python-wstool python-rosinstall-generator python-catkin-tools
 wstool init ~/pennair/catkin_ws/src
 rosinstall_generator --rosdistro melodic --upstream-development mavros | tee /tmp/mavros.rosinstall
